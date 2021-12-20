@@ -87,10 +87,8 @@ namespace App_UI.ViewModels
         /// </summary>
         public DelegateCommand<string> ExportCommand { get; set; }
 
-        /// <summary>
-        /// TODO 04a : Compléter ChangeLanguageCommand
-        /// </summary>
         public DelegateCommand<string> ChangeLanguageCommand { get; set; }
+        public DelegateCommand<string> RestartCommand { get; set; }
 
 
         #endregion
@@ -118,7 +116,18 @@ namespace App_UI.ViewModels
             ChangePageCommand = new DelegateCommand<string>(ChangePage);
             ExportCommand = new DelegateCommand<string>(ExportData);
             NewRecordCommand = new DelegateCommand<string>(RecordCreate);
+            ChangeLanguageCommand = new DelegateCommand<string>(ChangeLanguageF);
 
+        }
+
+        private void ChangeLanguageF(string param)
+        {
+            Properties.Settings.Default.Language = param;
+            Properties.Settings.Default.Save();
+
+            
+
+            RestartCommand?.Execute("");
         }
 
         private void RecordCreate(string obj)
@@ -128,6 +137,10 @@ namespace App_UI.ViewModels
 
         private void ExportData(string obj)
         {
+
+            String json = PeopleDataService.Instance.GetAllAsJson();
+            
+            
             /// TODO 02a : Compléter ExportData
             /// Utiliser PeopleDataService.Instance.GetAllAsJson() pour récupérer le json
         }

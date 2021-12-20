@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-
 namespace App_UI.Services
 {
     public class PeopleDataService : IDataService<Person>
@@ -146,8 +145,7 @@ namespace App_UI.Services
         /// <returns>Le nombre d'enregistrement importée</returns>
         public int SetAllFromJson(string allContent)
         {
-            /// TODO 01c : Compléter la méthode pour convertir les données
-            
+ 
             return 0;
         }
 
@@ -157,8 +155,10 @@ namespace App_UI.Services
         /// <returns>Une string en format json</returns>
         public string GetAllAsJson()
         {
-            /// TODO 02b : Compléter la méthode pour convertir les données
-            return string.Empty;
+            /// TODO 02b : Compléter la méthode pour convertir les donnéesd
+
+            return System.Text.Json.JsonSerializer.Serialize(data);
+
         }
 
         public IEnumerable<Person> GetAll()

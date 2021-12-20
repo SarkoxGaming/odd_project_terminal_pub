@@ -1,4 +1,5 @@
-﻿using App_UI.Services;
+﻿using App_UI.Commands;
+using App_UI.Services;
 using App_UI.ViewModels;
 using System.Windows;
 
@@ -10,6 +11,7 @@ namespace App_UI
     public partial class ApplicationView : Window
     {
         ApplicationViewModel vm;
+
 
         public ApplicationView()
         {
@@ -30,8 +32,37 @@ namespace App_UI
             /// Injection des services
             vm = new ApplicationViewModel(openFileDialog, saveFileDialog, confirmDeleteDialog);
 
+            vm.RestartCommand = new DelegateCommand<string>(Restart);
+
             DataContext = vm;
         }
 
+        private void Restart(string obj)
+        {
+            var toWhichLanguage = App_UI.Properties.Settings.Default.Language;
+
+            string content;
+
+            if (toWhichLanguage == "fr")
+            {
+                content = "Pour appliquer les changements, il faut redémarrer l'application.";
+            }
+            else if (toWhichLanguage == "en")
+            {
+                content = "To apply the changes, you must restart the application.";
+            }
+            else
+            {
+                content = "error language";
+            }
+
+            var result = MessageBox.Show(content, "Message", MessageBoxButton.OKCancel);
+
+
+            if (result == MessageBoxResult.OK)
+            {
+                //
+            }
+        }
     }
 }
