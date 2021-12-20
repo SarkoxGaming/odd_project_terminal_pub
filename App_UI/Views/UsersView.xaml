@@ -7,6 +7,7 @@
              xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
              xmlns:ctrl="clr-namespace:App_UI.Controls"
              mc:Ignorable="d" 
+             xmlns:p="clr-namespace:App_UI.Properties"
              xmlns:vm="clr-namespace:App_UI.ViewModels"
              d:DataContext="{d:DesignInstance Type=vm:UsersViewModel}"
              d:DesignHeight="450" d:DesignWidth="850">
@@ -47,24 +48,24 @@
             </Grid.RowDefinitions>
 
             <!-- TODO 04 : Besoin de traduction -->
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="First name :"/>
-            <TextBlock Grid.Row="0" Grid.Column="2" Text="Last name :"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="City :"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static p:Resources.mi_firstname}"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="{x:Static p:Resources.mi_lastname}"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static p:Resources.mi_city}"/>
 
 
             <!-- TODO 04 : Besoin de traduction -->
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Postal code :"/>
-            <TextBlock Grid.Row="3" Grid.Column="0" Text="Phone :"/>
-            <TextBlock Grid.Row="3" Grid.Column="2" Text="Mobile :"/>
-            <TextBlock Grid.Row="4" Grid.Column="0" Text="Email :"/>
-            <TextBlock Grid.Row="5" Grid.Column="0" Text="Birthday :"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static p:Resources.mi_codepostal}"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static p:Resources.mi_phone}"/>
+            <TextBlock Grid.Row="3" Grid.Column="2" Text="{x:Static p:Resources.mi_mobile}"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="{x:Static p:Resources.mi_email}"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="{x:Static p:Resources.mi_birthday}"/>
 
             <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource dataName}" Text="{Binding FirstName}" d:Text="Nicolas"/>
             <TextBox Grid.Row="0" Grid.Column="3" Style="{StaticResource dataName}" Text="{Binding LastName}" d:Text="Nicolas"/>
             <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource dataName}" Text="{Binding City}" d:Text="Shawinigan"/>
             
             <WrapPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
-                <TextBlock Text="Province/State :"/>
+                <TextBlock Text="{x:Static p:Resources.mi_state}"/>
                 <TextBox Width="35" Text="{Binding Province}" d:Text="QC"/>
             </WrapPanel>
             
@@ -75,10 +76,10 @@
             <DatePicker Grid.Row="5" Grid.Column="1" Text="{Binding BirthDay}" VerticalAlignment="Center" d:Text="2021-12-03"/>
 
             <WrapPanel Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2">
-                <Button Content="Delete" Command="{Binding DeleteCommand}"/>
-                <Button Content="Validate" Command="{Binding ValidateDataCommand}"/>
-                <Button Content="Cancel" Command="{Binding CancelCommand}"/>
-                <Button Content="Save" Command="{Binding SaveCommand}"/>
+                <Button Content="{x:Static p:Resources.mi_delete}" Command="{Binding DeleteCommand}"/>
+                <Button Content="{x:Static p:Resources.mi_validate}" Command="{Binding ValidateDataCommand}"/>
+                <Button Content="{x:Static p:Resources.mi_cancel}" Command="{Binding CancelCommand}"/>
+                <Button Content="{x:Static p:Resources.mi_save}" Command="{Binding SaveCommand}"/>
             </WrapPanel>
             <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3"
                         Visibility="{Binding MessageVisibility, Converter={StaticResource BooleanToVisibilityConverter}}" >

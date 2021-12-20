@@ -115,6 +115,7 @@ namespace App_UI.ViewModels
         {
             ChangePageCommand = new DelegateCommand<string>(ChangePage);
             ExportCommand = new DelegateCommand<string>(ExportData);
+            ImportCommand = new DelegateCommand<string>(ImportData);
             NewRecordCommand = new DelegateCommand<string>(RecordCreate);
             ChangeLanguageCommand = new DelegateCommand<string>(ChangeLanguageF);
 
@@ -147,6 +148,7 @@ namespace App_UI.ViewModels
 
         private async void ImportData(string obj)
         {
+            PeopleDataService.Instance.SetAllFromJson(obj);
             /// TODO 01b : Compléter la commande d'importation
             /// Utiliser PeopleDataService.Instance.SetAllFromJson(string allContent)
             

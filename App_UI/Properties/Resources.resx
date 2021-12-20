@@ -123,11 +123,32 @@
   <data name="lbl_apiKey" xml:space="preserve">
     <value>API key :</value>
   </data>
+  <data name="mi_birthday" xml:space="preserve">
+    <value>Birthday :</value>
+  </data>
+  <data name="mi_cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="mi_city" xml:space="preserve">
+    <value>City :</value>
+  </data>
+  <data name="mi_codepostal" xml:space="preserve">
+    <value>Postal Code :</value>
+  </data>
+  <data name="mi_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="mi_email" xml:space="preserve">
+    <value>Email :</value>
+  </data>
   <data name="mi_export" xml:space="preserve">
     <value>Export...</value>
   </data>
   <data name="mi_file" xml:space="preserve">
     <value>File</value>
+  </data>
+  <data name="mi_firstname" xml:space="preserve">
+    <value>First name :</value>
   </data>
   <data name="mi_import" xml:space="preserve">
     <value>Import...</value>
@@ -135,8 +156,32 @@
   <data name="mi_language" xml:space="preserve">
     <value>Languages</value>
   </data>
+  <data name="mi_lastname" xml:space="preserve">
+    <value>Last name :</value>
+  </data>
+  <data name="mi_mobile" xml:space="preserve">
+    <value>Mobile :</value>
+  </data>
+  <data name="mi_phone" xml:space="preserve">
+    <value>Phone :</value>
+  </data>
   <data name="mi_preferences" xml:space="preserve">
     <value>Preferences...</value>
+  </data>
+  <data name="mi_result" xml:space="preserve">
+    <value>Test result:</value>
+  </data>
+  <data name="mi_save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="mi_state" xml:space="preserve">
+    <value>State :</value>
+  </data>
+  <data name="mi_tooltip" xml:space="preserve">
+    <value>New Record</value>
+  </data>
+  <data name="mi_validate" xml:space="preserve">
+    <value>Validate</value>
   </data>
   <data name="msg_restart" xml:space="preserve">
     <value>Restarting...</value>

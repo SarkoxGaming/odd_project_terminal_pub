@@ -20,6 +20,7 @@ namespace App_UI
         {
             var lang = App_UI.Properties.Settings.Default.Language;
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(lang);
+            
         }
 
         protected override void OnStartup(StartupEventArgs e)

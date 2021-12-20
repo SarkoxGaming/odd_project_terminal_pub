@@ -36,7 +36,7 @@
         </Menu>
         <ToolBar DockPanel.Dock="Top">
             <!-- TODO 04 : Besoin de traduction -->
-            <Button Height="25" Width="25" Command="{Binding NewRecordCommand}" ToolTip="New record">
+            <Button Height="25" Width="25" Command="{Binding NewRecordCommand}" ToolTip="{x:Static p:Resources.mi_tooltip}">
                 <Image Source="/assets/plus.png" Stretch="UniformToFill" d:Source="../assets/plus.png"/>
                 
             </Button>

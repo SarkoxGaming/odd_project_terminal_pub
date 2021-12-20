@@ -1,6 +1,7 @@
 ﻿using App_UI.Commands;
 using OpenWeatherAPI;
 using System;
+using System.Threading.Tasks;
 
 namespace App_UI.ViewModels
 {
@@ -56,8 +57,13 @@ namespace App_UI.ViewModels
             /// TODO 05 : Tester que l'appli est capable de récupérer la clé api
             /// et faire une appel à l'OpenWeatherProcessor avec GetOneCallAsync
             /// Copier le string du resultat dans TestResult
+            
 
             var result = "Attendre après l'appel de GetOneCallAsync";
+
+            var t = await OpenWeatherProcessor.Instance.GetOneCallAsync();
+            
+            result = t.ToString();
 
             TestResult = result == null ? "Not working" : result.ToString();
         }

@@ -57,12 +57,6 @@ namespace App_UI
             }
 
             var result = MessageBox.Show(content, "Message", MessageBoxButton.OKCancel);
-
-
-            if (result == MessageBoxResult.OK)
-            {
-                //
-            }
         }
     }
 }
